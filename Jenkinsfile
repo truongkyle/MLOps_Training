@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        registry = 'quandvrobusto/house-price-prediction-api'
+        registry = 'xavielee/house-price-prediction-api'
         registryCredential = 'dockerhub'
         APP_DIR = 'lesson11_CICD_jenkins'
     }
