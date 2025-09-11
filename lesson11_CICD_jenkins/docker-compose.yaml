@@ -1,7 +1,8 @@
 version: '3.8'
 services:
   jenkins:
-    image: fullstackdatascience/jenkins:lts 
+    build: ./custom_jenkins
+    image: local/custom-jenkins:lts
     container_name: jenkins
     restart: unless-stopped
     privileged: true

@@ -1,0 +1,14 @@
+workflow-aggregator
+credentials
+ssh-credentials
+credentials-binding
+git
+git-client
+timestamper
+junit
+mailer
+matrix-auth
+docker-workflow
+pipeline-model-definition
+pipeline-model-extensions
+pipeline-model-api

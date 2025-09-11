@@ -82,21 +82,6 @@ Nếu bạn dùng Jenkins khác, hãy cài các plugin trên ở Manage Plugins.
 - Ví dụ: `youruser/house-price-prediction-api`.
 - Sửa `registry` trong `Jenkinsfile` về repo của bạn nếu cần.
 
-4) GitHub Credentials (nếu repo private hoặc để tránh rate limit):
-- Tạo Personal Access Token (PAT) trên GitHub:
-  - GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token.
-  - Scopes tối thiểu: `repo` (đọc mã nguồn). Nếu cần webhook từ Jenkins, thêm `admin:repo_hook`. Với repo/organization riêng tư, có thể cần `read:org`.
-  - Chọn thời hạn phù hợp, tạo token và sao chép (chỉ hiện 1 lần).
-- Thêm token vào Jenkins:
-  - Manage Jenkins → Credentials → System → Global → Add Credentials.
-  - Cách 1 (thường dùng cho Git over HTTPS): Kind: `Username with password` → Username: tài khoản GitHub của bạn → Password: dán PAT → ID: `github-https`.
-  - Cách 2 (dùng cho GitHub API): Kind: `Secret text` → Secret: PAT → ID: `github-token`.
-- Gán credentials cho job:
-  - Multibranch Pipeline → Configure → Branch Sources → Add source (GitHub/Git) → nhập URL repo.
-  - Chọn `Credentials`: `github-https` (nếu dùng HTTPS). Với nguồn “GitHub” bạn cũng có thể chọn `github-token` cho phần "Scan credentials" để giảm rate limit.
-- Tùy chọn cấu hình GitHub API usage:
-  - Manage Jenkins → Configure System → GitHub → GitHub API usage → chọn chiến lược dùng token (ví dụ Exhaust/Throttle) và trỏ tới credential `github-token` để tránh thông báo "GitHub throttling is disabled".
-
 ---
 
 ## 6) Jenkinsfile – biến và các stage
@@ -246,3 +231,4 @@ docker run -d -p 30000:30000 --name house-api <youruser>/house-price-prediction-
 - `lesson11_CICD_jenkins/docker-compose.yaml`
 
 Chúc bạn học và thực hành Jenkins hiệu quả!
+
